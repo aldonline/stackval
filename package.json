@@ -1,6 +1,6 @@
 {
   "name": "stackval",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Attach values to the stack and access them downstream",
   "author": "Aldo Bucchi <aldo.bucchi@gmail.com>",
   "main": "lib",
