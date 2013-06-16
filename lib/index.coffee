@@ -14,5 +14,6 @@ class StackVal
 
 module.exports = ->
   s = new StackVal()
-  attach: s.attach
-  get: s.get
+  s.get.attach = s.attach
+  s.get.get = s.get
+  s.get

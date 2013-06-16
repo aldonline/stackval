@@ -11,6 +11,13 @@ describe 'stackval', ->
     funcb = v1.attach funcb, -> 'foo'
     funcb()
 
+  it 'should work using shortcut form', ->
+    v1 = stackval()
+    funca = -> v1().should.equal 'foo'
+    funcb = -> funca()
+    funcb = v1.attach funcb, -> 'foo'
+    funcb()
+
   describe 'nested stackval', ->
     it 'should work', ->
       v1 = stackval()
