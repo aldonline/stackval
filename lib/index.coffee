@@ -10,12 +10,13 @@ class StackVal
   attach: ( f, generator ) =>
     unless typeof f is 'function'
       throw new Error 'function argument required'
-    =>
+    sv = @
+    ->
       try
-        @_stack.push generator()
-        f.apply null, arguments
+        sv._stack.push generator()
+        f.apply @, arguments
       finally
-        @_stack.pop()
+        sv._stack.pop()
   ###
   Gets a stackval that was attached to an upstack function
   will throw an error if there is no upstack function with a value
